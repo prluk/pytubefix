@@ -26,6 +26,7 @@ class AsyncYouTube:
         on_progress_callback: Optional[Callable[[Any, bytes, int], None]] = None,
         on_complete_callback: Optional[Callable[[Any, Optional[str]], None]] = None,
         proxies: Optional[Dict[str, str]] = None,
+        fallback_clients: Optional[List[str]] = None,
         use_oauth: bool = False,
         allow_oauth_cache: bool = True,
         token_file: Optional[str] = None,
@@ -51,7 +52,7 @@ class AsyncYouTube:
 
         self.client = 'WEB' if use_po_token else client
         self.client = 'TV' if use_oauth else self.client
-        self.fallback_clients = ['TV', 'IOS']
+        self.fallback_clients = ['TV', 'IOS'] if fallback_clients is None else list(fallback_clients)
         self._signature_timestamp: dict = {}
         self._visitor_data = None
         self.stream_monostate = Monostate(

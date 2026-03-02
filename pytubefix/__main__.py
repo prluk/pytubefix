@@ -57,6 +57,7 @@ class YouTube:
             on_progress_callback: Optional[Callable[[Any, bytes, int], None]] = None,
             on_complete_callback: Optional[Callable[[Any, Optional[str]], None]] = None,
             proxies: Optional[Dict[str, str]] = None,
+            fallback_clients: Optional[List[str]] = None,
             use_oauth: bool = False,
             allow_oauth_cache: bool = True,
             token_file: Optional[str] = None,
@@ -83,6 +84,8 @@ class YouTube:
             complete events.
         :param dict proxies:
             (Optional) A dict mapping protocol to proxy address which will be used by pytube.
+        :param list fallback_clients:
+            (Optional) A custom list of YouTube fallback clients.
         :param bool use_oauth:
             (Optional) Prompt the user to authenticate to YouTube.
             If allow_oauth_cache is set to True, the user should only be prompted once.
@@ -131,7 +134,7 @@ class YouTube:
         # oauth can only be used by the TV and TV_EMBED client.
         self.client = 'TV' if use_oauth else self.client
 
-        self.fallback_clients = ['TV', 'IOS']
+        self.fallback_clients = ['TV', 'IOS'] if fallback_clients is None else list(fallback_clients)
 
         self._signature_timestamp: dict = {}
         self._visitor_data = None
