@@ -1,15 +1,25 @@
-# Pytubefix
+<p align="center">
+  <img
+    width="250"
+    alt="pytubefix_logo"
+    src="https://github.com/user-attachments/assets/f57a840f-9fa7-465c-997b-17bdf8f8be2e"
+  />
+</p>
 
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/pytubefix)](https://pypi.org/project/pytubefix/)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/juanbindez)](https://github.com/sponsors/juanbindez)
-[![PyPI - License](https://img.shields.io/pypi/l/pytubefix)](https://opensource.org/licenses/MIT)
-[![Read the Docs](https://img.shields.io/readthedocs/pytubefix)](https://pytubefix.readthedocs.io/)
-[![GitHub Tag](https://img.shields.io/github/v/tag/JuanBindez/pytubefix?include_prereleases)](https://github.com/JuanBindez/pytubefix/releases)
-[![PyPI - Version](https://img.shields.io/pypi/v/pytubefix)](https://pypi.org/project/pytubefix/)
+<p align="center">
+  <img src="https://img.shields.io/pypi/dm/pytubefix">
+  <img src="https://img.shields.io/github/sponsors/juanbindez">
+  <img src="https://img.shields.io/pypi/l/pytubefix">
+  <img src="https://img.shields.io/readthedocs/pytubefix">
+  <img src="https://img.shields.io/github/v/tag/JuanBindez/pytubefix?include_prereleases">
+  <img src="https://img.shields.io/pypi/v/pytubefix">
+  <img src="https://img.shields.io/pypi/pyversions/pytubefix.svg">
+</p>
 
-## Python3 Library for Downloading YouTube Videos
+<h2 align="center">
+  Python3 Library for Downloading YouTube Videos
+</h2>
 
----
 
 ## Installation
 
@@ -93,7 +103,7 @@ ys.download(output_path="path/to/directory")
 
 ---
 
-## Working with Subtitles/Caption Tracks
+### Working with Subtitles/Caption Tracks
 
 ### View Available Subtitles:
 
@@ -126,7 +136,7 @@ caption.save_captions("captions.txt")
 
 ---
 
-## Using Channels
+### Using Channels
 
 ### Get Channel Name:
 
@@ -151,7 +161,7 @@ for video in c.videos:
 
 ---
 
-## Search for Videos
+### Search for Videos
 
 ### Basic Search:
 
@@ -186,13 +196,13 @@ for video in s.videos:
 ```
 
 
-# AsyncYouTube — Advanced Guide with Complete Examples
+### AsyncYouTube — Advanced Guide with Complete Examples
 
 `AsyncYouTube` is a fully **asynchronous Python interface** built on **PyTubeFix**, intended for developers who require complete control over YouTube video data. It provides access to video streams, metadata, chapters, key moments, and more — all without blocking your event loop.
 
 ---
 
-## Quick Start Example
+### Quick Start Example
 
 A full program demonstrating basic usage:
 
@@ -218,7 +228,7 @@ if __name__ == '__main__':
 
 ---
 
-## Download a Specific Stream
+### Download a Specific Stream
 
 Complete example showing download with progress and completion callbacks:
 
@@ -256,7 +266,7 @@ if __name__ == '__main__':
 
 ---
 
-## Fetch Video Metadata
+### Fetch Video Metadata
 
 ```python
 import asyncio
@@ -285,7 +295,7 @@ if __name__ == '__main__':
 
 ---
 
-## Retrieve Chapters and Key Moments
+### Retrieve Chapters and Key Moments
 
 ```python
 import asyncio
@@ -308,7 +318,7 @@ if __name__ == '__main__':
 
 ---
 
-## Create AsyncYouTube from Video ID
+### Create AsyncYouTube from Video ID
 
 ```python
 import asyncio
@@ -329,7 +339,7 @@ if __name__ == '__main__':
 
 ---
 
-## Best Practices
+### Best Practices
 
 * Always `await` asynchronous methods: `streams()`, `title()`, `views()`, `likes()`, `chapters()`, `key_moments()`.
 * Use `use_oauth=True` to handle age-restricted content; cache tokens to minimize repeated logins.
